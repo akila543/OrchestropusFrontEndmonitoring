@@ -40,14 +40,14 @@ class Results extends Component {
               <Tabs style={{'margin':'auto','width':'100%','marginTop':'-15'}}>
                   <Tab label="STDOUT" style={{'backgroundColor':'#009688'}}>
                       <div>
-                        {JSON.parse(value).result.stdout}
+                      <pre>  {JSON.parse(value).result.stdout}</pre>
                       </div>
                     </Tab>
                     <Tab label="STDERR" style={{'backgroundColor':'#009688'}}>
-                        {JSON.parse(value).result.stderr}
+                        <pre>{JSON.parse(value).result.stderr}</pre>
                    </Tab>
                    <Tab label="EXITCODE" style={{'backgroundColor':'#009688'}}>
-                   stage exited with code :{JSON.parse(value).result.exitCode}
+                  <pre> stage exited with code :{JSON.parse(value).result.exitCode}</pre>
                    </Tab>
             </Tabs>
           </Container>

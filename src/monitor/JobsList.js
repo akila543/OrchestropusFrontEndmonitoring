@@ -5,6 +5,15 @@ import { Container, Row, Col } from 'react-grid-system';
 import Divider from 'material-ui/Divider';
 import io from 'socket.io-client';
 import axios from 'axios';
+import Avatar from 'material-ui/Avatar';
+import {
+  blue300,
+  indigo900,
+  orange200,
+  deepOrange300,
+  pink400,
+  purple500,
+} from 'material-ui/styles/colors';
 
 class JobsList extends Component {
   constructor(props) {
@@ -29,16 +38,17 @@ class JobsList extends Component {
           });
           // console.log("state is "+_this.state.jobList);
         });
-    //this.state.socket.on('status', this.handleStatus.bind(this));
+//    this.state.socket.on('result', this.handleStatus.bind(this));
   }
-  // handleStatus(status){
-  //   this.setState({
-  //     status : status
-  //   })
-  // }
+
+
+
+
+
+
 
     render() {
-    var jobs = this.state.jobList.map((job)=>{
+    var jobs = this.state.jobList.reverse().map((job)=>{
       return(
         <Container>
           <Card style={{'width':'100%','margin':'auto','marginTop':10}} onClick={this.props.handleClick.bind(this,1,job.jobId,'')}>
@@ -49,7 +59,11 @@ class JobsList extends Component {
                   />
                 </Col>
                 <Col sm={4} style={{'marginTop':15}}>
-                  started
+                <Avatar
+                  color={orange200}
+                  backgroundColor={pink400}
+                  size={20}
+                />
                 </Col>
                 <Col sm={2} style={{'marginTop':15}}>
                   <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">

@@ -23,7 +23,7 @@ app.use(function(req, res, next) {
 });
 
 
-var url = "mongodb://localhost:27018/workflowsandlanpacks";
+var url = "mongodb://localhost:27017/workflowsandlanpacks";
 mongoose.connect(url);
 
 app.use(bodyParser.urlencoded({ extended: false }));
